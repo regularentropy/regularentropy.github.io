@@ -12,111 +12,209 @@
 
     <style>
         body {
-            max-width: 800px;
+            background: #ffffff;
+            color: #000000;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        #page {
+            max-width: 640px;
             margin: 0 auto;
-            padding: 2rem;
-            font-family: monospace;
-            line-height: 1.6;
+            padding: 20px 15px 30px;
+        }
+
+        a {
+            color: #0000ee;
+            text-decoration: underline;
+        }
+        a:visited { color: #551a8b; }
+        a:active { color: #ee0000; }
+
+        h1 {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 4px 0;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: bold;
+            border-bottom: 1px solid #999999;
+            padding-bottom: 2px;
+            margin: 28px 0 8px 0;
+        }
+
+        h3 {
+            font-size: 13px;
+            font-weight: bold;
+            margin: 14px 0 2px 0;
+        }
+
+        p { margin: 6px 0; }
+
+        .subtitle {
+            color: #666666;
+            font-size: 12px;
+            margin: 0 0 10px 0;
+        }
+
+        .nav {
+            font-size: 12px;
+            background: #f0f0f0;
+            border: 1px solid #cccccc;
+            padding: 4px 8px;
+            margin: 12px 0;
+        }
+
+        .meta {
+            color: #666666;
+            font-size: 11px;
+        }
+
+        .tech { color: #666666; font-size: 12px; }
+
+        ul { margin: 6px 0; padding-left: 22px; }
+        li { margin: 2px 0; }
+
+        hr {
+            border: none;
+            border-top: 1px solid #999999;
+            margin: 20px 0;
+        }
+
+        .counter {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 12px;
+            background: #000000;
+            color: #00ff00;
+            padding: 2px 8px;
+            letter-spacing: 3px;
+            display: inline-block;
+        }
+
+        .footer {
+            margin-top: 30px;
+            border-top: 1px solid #999999;
+            padding-top: 10px;
+            font-size: 11px;
+            color: #666666;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1 id="top">regularentropy's website</h1>
-    <p>Desktop Developer | C#  | .NET | Open Source</p>
+<div id="page">
+    <h1>regularentropy's website</h1>
+    <p class="subtitle">Desktop Developer | C# | .NET | Open Source</p>
+
+    <div class="nav">
+        <a href="#about">About</a> |
+        <a href="#projects">Projects</a> |
+        <a href="#experience">Experience</a> |
+        <a href="#education">Education</a> |
+        <a href="#certificates">Certificates</a> |
+        <a href="#languages">Languages</a> |
+        <a href="#technologies">Technologies</a>
+    </div>
+
     <p>
-		 <a href="https://github.com/regularentropy">GitHub</a>
-		 | 
-		 <span id="email"></span>
-		 <noscript>
-			<span>Enable Javascript to display email</span>
-		</noscript>
-	</p>
-	<p> 
-		<a href="#about" />About</a>
-		<a href="#projects" />Projects</a>
-		<a href="#experience" />Experience</a> 
-		<a href="#education" />Education</a>
-		<a href="#certificates" />Certificates</a> 
-		<a href="#languages" />Languages</a> 
-		<a href="#technologies" />Technologies</a>
-	</p>
+        <a href="https://github.com/regularentropy">GitHub</a> |
+        <span id="email"></span>
+        <noscript><span class="meta">[enable JavaScript to see email]</span></noscript>
+    </p>
 
     <hr>
 
-    <h2>About</h2>
-	<p>Hi, I'm regularentropy (reg) - a .NET developer from Kyiv, now based in France.</p>
-
+    <h2 id="about">About</h2>
+    <p>Hi, I'm regularentropy (reg) - a .NET developer from Kyiv, now based in France.</p>
     <p>I build Windows desktop applications in C# (WinForms, Avalonia, WPF), usually born from a problem I ran into myself and couldn't find a clean tool for. I've been writing code since 2020, contributing to live open source since 2022 - and for the past year and a half I've focused specifically on C# and .NET.</p>
+    <p>I'm open to opportunities: full-time roles, freelance projects, and open-source collaborations.</p>
 
-	<p>I'm open to opportunities: full-time roles, freelance projects, and open-source collaborations.</p>
-	
-	<h2 id="projects">Projects</h2>
-    <h3>enviro</h3>
+    <h2 id="projects">Projects</h2>
+
+    <h3><a href="https://github.com/regularentropy/enviro">enviro</a></h3>
     <p>Environment variable editor for Windows with an actually usable GUI.</p>
-    <p>C#, WinForms | <a href="https://github.com/regularentropy/enviro">GitHub</a></p>
-    
-    <h3>mpvmux</h3>
+    <p class="tech">C#, WinForms</p>
+
+    <h3><a href="https://github.com/regularentropy/mpvmux">mpvmux</a></h3>
     <p>Solves the problem of watching multiple videos with external audio tracks.</p>
-    <p>C#, Avalonia | <a href="https://github.com/regularentropy/mpvmux">GitHub</a></p>
+    <p class="tech">C#, Avalonia</p>
 
-	<h3>floorp-docs-neo</h3>
+    <h3><a href="https://github.com/Floorp-Projects/floorp-docs-neo">floorp-docs-neo</a></h3>
     <p>Documentation for the Floorp Browser.</p>
-    <p>TypeScript, Docusaurus | <a href="https://github.com/Floorp-Projects/floorp-docs-neo">GitHub</a></p>
+    <p class="tech">TypeScript, Docusaurus</p>
 
-	<h3>TelegramDL</h3>
+    <h3><a href="https://github.com/regularentropy/TelegramDL">TelegramDL</a></h3>
     <p>Telegram Bot for downloading YouTube videos.</p>
-    <p>JavaScript | <a href="https://github.com/regularentropy/TelegramDL">GitHub</a></p>
+    <p class="tech">JavaScript</p>
 
-	<h2 id="experience">Experience</h2>
-	
-	<h3>2024 - Present</h3>
-	<p>Independent Developer</p>
-	<p>Developing desktop GUI applications in C# (WinForms/Avalonia/WPF)</p>
+    <h2 id="experience">Experience</h2>
 
-	<h3>2022 - Present</h3>
-	<p>Open Source Contributor</p>
-	<p>Floorp Projects (Ablaze)</p>
-	<p>First international contributor to Floorp Browser. Codebase refactoring, localization to English/Russian/Ukrainian, tech support, user documentation. Member of the Japanese Ablaze developer community</p>
-	
-	<h2 id="education">Education</h2>
-	<h3>2021 - 2024</h3>
-	<p>3D Modeling and Visual Effects (Creative Media)</p>
-	<p>University of Lower Silesia, Wroclaw, Poland</p>
-	<p>GPA 4.85/5.0. Graduated Thesis: horror game on Unity/C#, developed in solo from scratch without prior engine experience.</p>
-	
-	<h3>2016 - 2020</h3>
-	<p>IT and Information Security</p>
-	<p>NVK 141 Kyiv, Ukraine</p>
-	<p>Specialized school with in-depth study of information technology and cybersecurity. Achieved various CISCO certificates</p>
+    <h3>2024 - Present</h3>
+    <p><b>Independent Developer</b></p>
+    <p>Developing desktop GUI applications in C# (WinForms/Avalonia/WPF)</p>
 
-	<h2 id="certificates">Certificates</h2>
-	<p>Cisco Certificates: CCNA Security, Cybersecurity Essentials, NDG Linux Essentials</p>
+    <h3>2022 - Present</h3>
+    <p><b>Open Source Contributor</b> &mdash; Floorp Projects (Ablaze)</p>
+    <p>First international contributor to Floorp Browser. Codebase refactoring, localization to English/Russian/Ukrainian, tech support, user documentation. Member of the Japanese Ablaze developer community.</p>
 
-	<h2 id="languages">Languages</h2>
-	<p>English - Professional working proficiency</p>
-	<p>Russian - Native</p>
-	<p>Ukraine - Native</p>
-	<p>Polish - Reading comprehension</p>
+    <h2 id="education">Education</h2>
 
-	<h2 id="technologies">Technologies</h2>
-	<h3>Programming Languages</h3>
-	<p>C# • Python • Go</p>
+    <h3>2021 - 2024</h3>
+    <p><b>3D Modeling and Visual Effects (Creative Media)</b></p>
+    <p>University of Lower Silesia, Wroclaw, Poland</p>
+    <p>GPA 4.85/5.0. Graduated Thesis: horror game on Unity/C#, developed in solo from scratch without prior engine experience.</p>
 
-	<h3>Desktop Development</h3>
-	<p>WinForms • Avalonia • WPF</p>
+    <h3>2016 - 2020</h3>
+    <p><b>IT and Information Security</b></p>
+    <p>NVK 141 Kyiv, Ukraine</p>
+    <p>Specialized school with in-depth study of information technology and cybersecurity. Achieved various CISCO certificates.</p>
 
-	<h3>Databases</h3>
-	<p>MySQL • PostgreSQL</p>
+    <h2 id="certificates">Certificates</h2>
+    <ul>
+        <li>CCNA Security</li>
+        <li>Cybersecurity Essentials</li>
+        <li>NDG Linux Essentials</li>
+    </ul>
+    <p class="meta">(Cisco)</p>
 
-	<h3>Tools & Other</h3>
-	<p>Git • Github • Localization (EN/RU/UK) • Technical Documentation</p>
+    <h2 id="languages">Languages</h2>
+    <ul>
+        <li><b>English</b> - professional working proficiency</li>
+        <li><b>Russian</b> - native</li>
+        <li><b>Ukrainian</b> - native</li>
+        <li><b>Polish</b> - reading comprehension</li>
+    </ul>
 
-	<a href="#top">To the top</l>
-</body>
+    <h2 id="technologies">Technologies</h2>
+    <ul>
+        <li><b>Programming Languages:</b> C# &bull; Python &bull; Go</li>
+        <li><b>Desktop Development:</b> WinForms &bull; Avalonia &bull; WPF</li>
+        <li><b>Databases:</b> MySQL &bull; PostgreSQL</li>
+        <li><b>Tools &amp; Other:</b> Git &bull; GitHub &bull; Localization (EN/RU/UK) &bull; Technical Documentation</li>
+    </ul>
+
+    <hr>
+
+    <p style="text-align:center">
+        visitors: <span class="counter">0001337</span>
+    </p>
+
+    <div class="footer">
+        <a href="#top">[ back to top ]</a><br>
+        last updated: 2025 &bull; best viewed at 1024x768 &bull; &copy; regularentropy
+    </div>
+</div>
 
 <script>
-	const parts = ['entropy.dev', '@', 'outlook.com'];
-	const email = parts.join('');
-	document.getElementById('email').textContent = email;
+	var parts = ['entropy.dev', '@', 'outlook.com'];
+	var email = parts.join('');
+	document.getElementById('email').innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
 </script>
+</body>
 </html>
