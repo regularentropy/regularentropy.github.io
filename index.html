@@ -9,103 +9,11 @@
 	<meta property="og:description" content=".NET desktop dev. C#, WinForms, Avalonia, WPF.">
 	<meta property="og:url" content="https://regularentropy.github.io/">
 	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://regularentropy.github.io/avatar.png">
 
-    <style>
-        body {
-            background: #ffffff;
-            color: #000000;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 13px;
-            line-height: 1.5;
-            margin: 0;
-            padding: 0;
-        }
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23000000'/%3E%3Ctext x='2' y='12' font-family='monospace' font-size='11' fill='%2300ff00'%3Er%3C/text%3E%3C/svg%3E">
 
-        #page {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 20px 15px 30px;
-        }
-
-        a {
-            color: #0000ee;
-            text-decoration: underline;
-        }
-        a:visited { color: #551a8b; }
-        a:active { color: #ee0000; }
-
-        h1 {
-            font-family: "Times New Roman", Times, serif;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 0 4px 0;
-        }
-
-        h2 {
-            font-size: 14px;
-            font-weight: bold;
-            border-bottom: 1px solid #999999;
-            padding-bottom: 2px;
-            margin: 28px 0 8px 0;
-        }
-
-        h3 {
-            font-size: 13px;
-            font-weight: bold;
-            margin: 14px 0 2px 0;
-        }
-
-        p { margin: 6px 0; }
-
-        .subtitle {
-            color: #666666;
-            font-size: 12px;
-            margin: 0 0 10px 0;
-        }
-
-        .nav {
-            font-size: 12px;
-            background: #f0f0f0;
-            border: 1px solid #cccccc;
-            padding: 4px 8px;
-            margin: 12px 0;
-        }
-
-        .meta {
-            color: #666666;
-            font-size: 11px;
-        }
-
-        .tech { color: #666666; font-size: 12px; }
-
-        ul { margin: 6px 0; padding-left: 22px; }
-        li { margin: 2px 0; }
-
-        hr {
-            border: none;
-            border-top: 1px solid #999999;
-            margin: 20px 0;
-        }
-
-        .counter {
-            font-family: "Courier New", Courier, monospace;
-            font-size: 12px;
-            background: #000000;
-            color: #00ff00;
-            padding: 2px 8px;
-            letter-spacing: 3px;
-            display: inline-block;
-        }
-
-        .footer {
-            margin-top: 30px;
-            border-top: 1px solid #999999;
-            padding-top: 10px;
-            font-size: 11px;
-            color: #666666;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="page">
@@ -124,7 +32,8 @@
 
     <p>
         <a href="https://github.com/regularentropy">GitHub</a> |
-        <span id="email"></span>
+        <span id="email"></span> |
+        <a href="#" id="theme-link">[dark]</a>
         <noscript><span class="meta">[enable JavaScript to see email]</span></noscript>
     </p>
 
@@ -137,21 +46,36 @@
 
     <h2 id="projects">Projects</h2>
 
+    <h3><a href="https://github.com/regularentropy/hakata">hakata</a></h3>
+    <p>Desktop text translator that runs on your own provider</p>
+    <p class="tech">C#, Avalonia</p>
+    <p>
+        <a class="shot" href="screenshots/hakata.png">
+            <img src="screenshots/hakata.png" width="300" height="205" alt="hakata screenshot">
+        </a>
+    </p>
+
     <h3><a href="https://github.com/regularentropy/enviro">enviro</a></h3>
     <p>Environment variable editor for Windows with an actually usable GUI.</p>
     <p class="tech">C#, WinForms</p>
+    <p>
+        <a class="shot" href="screenshots/enviro.png">
+            <img src="screenshots/enviro.png" width="300" height="180" alt="enviro screenshot">
+        </a>
+    </p>
 
     <h3><a href="https://github.com/regularentropy/mpvmux">mpvmux</a></h3>
     <p>Solves the problem of watching multiple videos with external audio tracks.</p>
     <p class="tech">C#, Avalonia</p>
+    <p>
+        <a class="shot" href="screenshots/mpvmux.png">
+            <img src="screenshots/mpvmux.png" width="300" height="192" alt="mpvmux screenshot">
+        </a>
+    </p>
 
     <h3><a href="https://github.com/Floorp-Projects/floorp-docs-neo">floorp-docs-neo</a></h3>
     <p>Documentation for the Floorp Browser.</p>
     <p class="tech">TypeScript, Docusaurus</p>
-
-    <h3><a href="https://github.com/regularentropy/TelegramDL">TelegramDL</a></h3>
-    <p>Telegram Bot for downloading YouTube videos.</p>
-    <p class="tech">JavaScript</p>
 
     <h2 id="experience">Experience</h2>
 
@@ -201,9 +125,11 @@
 
     <hr>
 
+    <!--
     <p style="text-align:center">
         visitors: <span class="counter">0001337</span>
     </p>
+    -->
 
     <div class="footer">
         <a href="#top">[ back to top ]</a><br>
@@ -212,9 +138,46 @@
 </div>
 
 <script>
+	// dark mode: saved choice > system preference > light
+	var themeLink = document.getElementById('theme-link');
+	function applyTheme(t) {
+		document.body.classList.toggle('dark', t === 'dark');
+		themeLink.textContent = t === 'dark' ? '[light]' : '[dark]';
+	}
+	var saved = localStorage.getItem('theme');
+	var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+	applyTheme(saved || (sysDark ? 'dark' : 'light'));
+	themeLink.addEventListener('click', function (e) {
+		e.preventDefault();
+		var next = document.body.classList.contains('dark') ? 'light' : 'dark';
+		applyTheme(next);
+		localStorage.setItem('theme', next);
+	});
+
 	var parts = ['entropy.dev', '@', 'outlook.com'];
 	var email = parts.join('');
 	document.getElementById('email').innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+
+	// screenshot zoom: click thumbnail -> overlay with full image
+	var zoom = document.createElement('div');
+	zoom.id = 'zoom';
+	document.body.appendChild(zoom);
+	var shots = document.querySelectorAll('.shot img');
+	for (var i = 0; i < shots.length; i++) {
+		shots[i].addEventListener('click', function (e) {
+			e.preventDefault();
+			zoom.innerHTML = '';
+			var big = document.createElement('img');
+			big.src = this.src;
+			big.alt = this.alt;
+			zoom.appendChild(big);
+			zoom.classList.add('open');
+		});
+	}
+	zoom.addEventListener('click', function () { zoom.classList.remove('open'); });
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape') zoom.classList.remove('open');
+	});
 </script>
 </body>
 </html>
